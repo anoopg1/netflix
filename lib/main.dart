@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:netflix/presentation/main_page/screen_mainpage.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -9,6 +10,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return MaterialApp(
+      theme: ThemeData(
+          primaryTextTheme: Typography(platform: TargetPlatform.iOS).white,
+          textTheme: Typography(platform: TargetPlatform.iOS).white,
+          scaffoldBackgroundColor: Colors.black),
+      home: ScreenMainPage(),
+    );
   }
 }
