@@ -19,7 +19,7 @@ class BottomNavigationWidget extends StatelessWidget {
         showSelectedLabels: true,
         showUnselectedLabels: true,
         selectedItemColor: Colors.white,
-        unselectedItemColor: Color.fromARGB(255, 189, 171, 171),
+        unselectedItemColor: Colors.grey,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(
@@ -28,7 +28,7 @@ class BottomNavigationWidget extends StatelessWidget {
               icon: Icon(Icons.emoji_emotions_outlined), label: "Fast Laugh"),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.download_sharp), label: "download"),
+              icon: Icon(Icons.download_sharp), label: "Download"),
         ],
       ),
     );
