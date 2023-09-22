@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-import 'package:netflix/domain/core/api_end_points.dart';
+import 'package:netflix/core/api_end_points.dart';
 import 'package:netflix/domain/core/failures/main_failures.dart';
 import 'package:netflix/domain/downloads/models/download_services.dart';
-import 'package:netflix/domain/downloads/models/downloads.dart';
+import 'package:netflix/domain/downloads/models/downloads_model.dart';
 
 @LazySingleton(as: DownloadServices)
 class DownloadRepository implements DownloadServices {

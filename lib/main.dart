@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix/application/downloads/downloads_bloc.dart';
+import 'package:netflix/application/search/search_bloc.dart';
+
 import 'package:netflix/domain/core/dependency_injection/injectable.dart';
 import 'package:netflix/presentation/main_page/screen_mainpage.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,8 +22,8 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => getIt<DownloadsBloc>(),
-          child: Container(),
-        )
+        ),
+        BlocProvider(create: (context) => getIt<SearchBloc>()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
