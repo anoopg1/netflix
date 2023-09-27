@@ -4,13 +4,13 @@ import 'package:netflix/application/new_and_hot/new_and_hot_bloc.dart';
 import 'package:netflix/core/constants.dart';
 import 'package:netflix/infrastructure/api_key.dart';
 
-class ComingSoonPage extends StatelessWidget {
-  const ComingSoonPage({super.key});
+class EveryoneWatchingPage extends StatelessWidget {
+  const EveryoneWatchingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     BlocProvider.of<NewAndHotBloc>(context)
-        .add(NewAndHotEvent.getComingSoonData());
+        .add(NewAndHotEvent.getEveryonesWatching());
     return BlocBuilder<NewAndHotBloc, NewAndHotState>(
       builder: (context, state) {
         return SizedBox(
@@ -18,7 +18,7 @@ class ComingSoonPage extends StatelessWidget {
           width: double.infinity,
           child: ListView.separated(
               itemBuilder: (context, index) {
-                if (state.comingsoonList.length >= 10) {
+                if (state.everyonewatchingList.length >= 10) {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Card(
@@ -40,14 +40,14 @@ class ComingSoonPage extends StatelessWidget {
                                   image: DecorationImage(
                                       fit: BoxFit.fill,
                                       image: NetworkImage(
-                                          "$imageAppendUrl${state.comingsoonList[index].imageUrl}"))),
+                                          "$imageAppendUrl${state.everyonewatchingList[index].imageUrl}"))),
                             ),
                             kheight10,
                             Row(
                               children: [
                                 Expanded(
                                   child: Text(
-                                    state.comingsoonList[index].movieName,
+                                    state.everyonewatchingList[index].movieName,
                                     style: const TextStyle(
                                       fontSize: 40,
                                       fontWeight: FontWeight.bold,
@@ -61,11 +61,25 @@ class ComingSoonPage extends StatelessWidget {
                                         IconButton(
                                             onPressed: () {},
                                             icon: const Icon(
-                                              Icons.notifications_none,
+                                              Icons.play_arrow,
+                                              color: Colors.white,
+                                            )),
+                                        const Text("Play",
+                                            style: TextStyle(
+                                              fontSize: 10,
+                                            ))
+                                      ],
+                                    ),
+                                    Column(
+                                      children: [
+                                        IconButton(
+                                            onPressed: () {},
+                                            icon: const Icon(
+                                              Icons.share,
                                               color: Colors.white,
                                             )),
                                         const Text(
-                                          "Remind me",
+                                          "Share",
                                           style: TextStyle(
                                             fontSize: 10,
                                           ),
@@ -91,11 +105,6 @@ class ComingSoonPage extends StatelessWidget {
                               ],
                             ),
                             kheight10,
-                            Text(
-                              "Release: ${state.comingsoonList[index].date}",
-                              style: const TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.bold),
-                            ),
                             Container(
                               height: 150,
                               width: double.infinity,

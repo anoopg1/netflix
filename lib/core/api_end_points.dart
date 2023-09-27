@@ -8,4 +8,5 @@ class ApiEndPoints {
   static const homelatest = "$kBaseUrl/movie/now_playing?api_key=$apiKey";
   static const homeTrending = "$kBaseUrl/movie/popular?api_key=$apiKey";
   static const hometopTvSHow = "$kBaseUrl/trending/tv/week?api_key=$apiKey";
+  static const newandhotcomingsoon = "$kBaseUrl/movie/upcoming?api_key=$apiKey";
 }

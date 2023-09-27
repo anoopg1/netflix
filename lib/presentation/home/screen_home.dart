@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:netflix/application/bloc/home_bloc.dart';
+
+import 'package:netflix/application/home/home_bloc.dart';
 import 'package:netflix/core/constants.dart';
 import 'package:netflix/infrastructure/api_key.dart';
 import 'package:netflix/presentation/home/widgets/home_image_widget.dart';

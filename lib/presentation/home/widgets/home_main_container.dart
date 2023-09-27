@@ -13,7 +13,7 @@ class HomeMainContainer extends StatelessWidget {
           image: DecorationImage(
               fit: BoxFit.fill,
               image: NetworkImage(
-                  "https://www.themoviedb.org/t/p/w440_and_h660_face/ekZobS8isE6mA53RAiGDG93hBxL.jpg"))),
+                  "https://www.themoviedb.org/t/p/w440_and_h660_face/1IxZqwaqJUqMlasGgKdpvGFooWx.jpg"))),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
